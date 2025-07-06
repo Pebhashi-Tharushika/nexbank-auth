@@ -22,7 +22,7 @@ public class UserController {
         return ResponseEntity.ok().body(createdUser);
     }
 
-    @GetMapping(value = "/verifyUser")
+    @PostMapping(value = "/verifyUser")
     public ResponseEntity<String> verifyUser(@RequestBody UserDTO user) {
         String jwtToken = userService.verifyUser(user);
         if(jwtToken == null){

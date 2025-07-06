@@ -17,6 +17,11 @@ public interface ScopeRepository extends JpaRepository<ScopeEntity, Integer> {
      * @param roleId role id
      * @return list of scopes
      */
-    @Query(value = "select p.permission_id, p.permission from permission p inner join role_permission rp on p.permission_id = rp.permission_id inner join role r on rp.role_id = r.id where role_id =:roleId;", nativeQuery = true)
+    @Query(value = "select p.id, p.permission from permission p " +
+            "inner join role_permission rp " +
+            "on p.id = rp.permission_id " +
+            "inner join role r " +
+            "on rp.role_id = r.id " +
+            "where rp.role_id =:roleId;", nativeQuery = true)
     public List<ScopeEntity> findScopes(@Param("roleId") Integer roleId);
 }
