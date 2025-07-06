@@ -22,6 +22,9 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private ScopeRepository scopeRepository;
 
+    @Autowired
+    private JwtUtil jwtUtil;
+
     @Override
     public String verifyUser(UserDTO userDTO) {
         final UserEntity userEntity = userRepository.findUserByUserName(userDTO.getUsername());
@@ -33,7 +36,7 @@ public class UserServiceImpl implements UserService {
                 scopes.append(",");
               }
             );
-            return JwtUtil.generateToken(userDTO, scopes.toString());
+            return jwtUtil.generateToken(userDTO.getUsername(), scopes.toString());
         }
         return null;
     }
