@@ -1,3 +1,11 @@
+What are?
+- HTTP
+- Websocket
+- Socekt.io
+- GraphQL
+- gRPC
+- MQTT
+
 ![img.png](/assets/img.png)
 
 Why do we have a separate server and db for auth here?
@@ -16,7 +24,7 @@ Why do we can't go with username and password? Instead of JWT?
 After login to the server by submit the username, password, then how the server store the user's information? Let's say we need
 to see the expiration of the session, the user's role, etc.
  -using the session object and store the session object in the server
- -use JWT and store the JWT in the client side 
+ -use JWT and store the JWT in the client side
 
 ![img_1.png](/assets/img_1.png)
 
@@ -31,3 +39,6 @@ What is the difference between JWT and OAuth?
 How to make api with v2 version?
 
 There is another frontend and backend server to create and modify user? Or we can go with database query. what is the best option?
+
+
+@PreAuthorize, @PostAuthorize, or @Secured ?
