@@ -24,12 +24,9 @@ public class UserController {
 
     @GetMapping(value = "/verifyUser")
     public ResponseEntity<String> verifyUser(@RequestBody UserDTO user) {
-        UserDTO userDTO = userService.verifyUser(user);
-        if (userDTO == null) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User Not Exists. Please Sign Up");
-        }
-        if (Objects.equals(userDTO.getUsername(), user.getUsername()) && Objects.equals(userDTO.getPassword(), user.getPassword())) {
-            return ResponseEntity.ok("Valid user");
+        String jwtToken = userService.verifyUser(user);
+        if(jwtToken == null){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Invalid username or password, Or user not found");
         }
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid username or password");
     }

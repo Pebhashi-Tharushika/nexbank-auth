@@ -8,5 +8,5 @@ public interface UserService {
 
     UserDTO createUser(UserDTO user);
 
-    UserDTO verifyUser(UserDTO user);
+    String verifyUser(UserDTO user);
 }

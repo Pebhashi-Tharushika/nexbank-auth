@@ -21,4 +21,13 @@ public class UserEntity {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "mobile")
+    private String mobile;
+
+    @Column(name = "role_id")
+    private Integer roleId;
+
 }
