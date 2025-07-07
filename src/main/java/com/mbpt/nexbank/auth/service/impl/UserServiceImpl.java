@@ -31,10 +31,10 @@ public class UserServiceImpl implements UserService {
         if (userEntity != null && Objects.equals(userEntity.getUsername(), userDTO.getUsername()) && Objects.equals(userEntity.getPassword(), userDTO.getPassword())) {
             List<ScopeEntity> scopeEntityList = scopeRepository.findScopes(userEntity.getRoleId());
             final StringBuilder scopes = new StringBuilder();
-            scopeEntityList.forEach(scope ->{
-                scopes.append(scope.getPermission());
-                scopes.append(",");
-              }
+            scopeEntityList.forEach(scope -> {
+                        scopes.append(scope.getPermission());
+                        scopes.append(",");
+                    }
             );
             return jwtUtil.generateToken(userDTO.getUsername(), scopes.toString());
         }
