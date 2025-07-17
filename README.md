@@ -1,10 +1,13 @@
-What are?
+
+This repository includes a separate authentication server built with Spring Boot that handles user authentication independently from other backend services. It utilizes JWT (JSON Web Tokens) for secure, stateless authentication and implements role-based access control throughout the application.
+
+<!-- What are?
 - HTTP
 - Websocket
 - Socekt.io
 - GraphQL
 - gRPC
-- MQTT
+- MQTT -->
 
 ![img.png](/assets/img.png)
 
@@ -31,7 +34,7 @@ to see the expiration of the session, the user's role, etc.
 
 
 
-How to create a cookie?
+<!-- How to create a cookie?
 
 
 What is the difference between JWT and OAuth?
@@ -41,4 +44,4 @@ How to make api with v2 version?
 There is another frontend and backend server to create and modify user? Or we can go with database query. what is the best option?
 
 
-@PreAuthorize, @PostAuthorize, or @Secured ?
+@PreAuthorize, @PostAuthorize, or @Secured ? -->
